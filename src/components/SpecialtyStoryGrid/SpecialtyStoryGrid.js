@@ -96,7 +96,7 @@ const Wrapper = styled.div`
         width: 1px;
         top: 0;
         right: calc(-1 * var(--gap-basis) / 2);
-        transform: translateX(-50%);
+        transform: translateX(50%);
         background-color: var(--color-gray-300);
       }
     }
