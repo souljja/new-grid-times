@@ -1,22 +1,31 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import {QUERIES} from "../../constants";
 
-const OpinionStory = ({ id, title, author, avatar }) => {
-  return (
-    <a href={`/story/${id}`}>
-      <Wrapper>
-        <Avatar alt="" src={avatar} />
-        <div>
-          <AuthorName>{author}</AuthorName>
-          <ArticleTitle>{title}</ArticleTitle>
-        </div>
-      </Wrapper>
-    </a>
-  );
+const OpinionStory = ({id, title, author, avatar}) => {
+    return (
+        <a href={`/story/${id}`}>
+            <Wrapper>
+                <div>
+                    <AuthorName>{author}</AuthorName>
+                    <ArticleTitle>{title}</ArticleTitle>
+                </div>
+                <Avatar alt="" src={avatar}/>
+            </Wrapper>
+        </a>
+    );
 };
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+
+  @media (${QUERIES.tabletOnly}) {
+    flex-direction: column-reverse;
+    gap: revert;
+  }
 `;
 
 const Avatar = styled.img`
